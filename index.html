@@ -24,7 +24,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,14 +35,8 @@
     }
 
     button, input, select, textarea { font: inherit; }
-
     button { cursor: pointer; }
-
-    button:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
-
+    button:disabled { opacity: .55; cursor: not-allowed; }
     a { color: var(--primary); }
 
     .container {
@@ -94,28 +87,11 @@
       text-decoration: none;
     }
 
-    .btn-primary {
-      color: white;
-      background: var(--primary);
-    }
-
+    .btn-primary { color: white; background: var(--primary); }
     .btn-primary:hover { background: var(--primary-dark); }
-
-    .btn-light {
-      color: var(--primary-dark);
-      background: #eaf5f4;
-    }
-
-    .btn-outline {
-      background: white;
-      color: var(--primary-dark);
-      border: 1px solid var(--border);
-    }
-
-    .btn-danger {
-      background: #fff0ee;
-      color: var(--danger);
-    }
+    .btn-light { color: var(--primary-dark); background: #eaf5f4; }
+    .btn-outline { background: white; color: var(--primary-dark); border: 1px solid var(--border); }
+    .btn-danger { background: #fff0ee; color: var(--danger); }
 
     .hero {
       background:
@@ -133,12 +109,7 @@
       letter-spacing: -1px;
     }
 
-    .hero p {
-      max-width: 650px;
-      font-size: 1.08rem;
-      opacity: .96;
-      margin: 0 0 25px;
-    }
+    .hero p { max-width: 650px; font-size: 1.08rem; opacity: .96; margin: 0 0 25px; }
 
     .search-panel {
       background: white;
@@ -151,17 +122,8 @@
       box-shadow: var(--shadow);
     }
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .field label {
-      font-size: .88rem;
-      font-weight: 750;
-    }
+    .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .field label { font-size: .88rem; font-weight: 750; }
 
     input, select, textarea {
       width: 100%;
@@ -173,10 +135,7 @@
       color: var(--ink);
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
+    textarea { resize: vertical; min-height: 100px; }
 
     input:focus, select:focus, textarea:focus {
       outline: 2px solid #9dd9d7;
@@ -184,7 +143,6 @@
     }
 
     main { padding: 34px 0 56px; }
-
     section { scroll-margin-top: 90px; }
 
     .section-heading {
@@ -196,12 +154,7 @@
       margin-bottom: 20px;
     }
 
-    h2 {
-      font-size: clamp(1.45rem, 3vw, 2rem);
-      margin: 0 0 6px;
-      letter-spacing: -.5px;
-    }
-
+    h2 { font-size: clamp(1.45rem, 3vw, 2rem); margin: 0 0 6px; letter-spacing: -.5px; }
     .muted { color: var(--muted); }
 
     .grid {
@@ -218,12 +171,66 @@
       box-shadow: var(--shadow);
     }
 
-    .card-photo {
+    /* GALERÍA DE FOTOGRAFÍAS */
+    .photo-gallery {
       width: 100%;
-      height: 225px;
+      overflow: hidden;
+      background: #edf3f2;
+    }
+
+    .gallery-main {
+      position: relative;
+      width: 100%;
+      background: #e9f0ef;
+    }
+
+    .gallery-main .card-photo {
+      width: 100%;
+      height: 260px;
       object-fit: cover;
       display: block;
       background: #e9f0ef;
+      cursor: zoom-in;
+    }
+
+    .gallery-thumbnails {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scroll-snap-type: x proximity;
+      background: #fff;
+    }
+
+    .gallery-thumb {
+      width: 78px;
+      height: 62px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e9f0ef;
+      border: 2px solid transparent;
+      cursor: pointer;
+      scroll-snap-align: start;
+      transition: border-color .15s, opacity .15s, transform .15s;
+    }
+
+    .gallery-thumb:hover {
+      opacity: .85;
+      transform: translateY(-1px);
+    }
+
+    .gallery-thumb.active {
+      border-color: var(--primary);
+    }
+
+    .gallery-count {
+      margin: 0;
+      padding: 0 10px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      background: white;
     }
 
     .photo-placeholder {
@@ -259,23 +266,10 @@
       margin: 12px 0;
     }
 
-    .price {
-      color: var(--primary-dark);
-      font-size: 1.15rem;
-      font-weight: 850;
-      margin: 10px 0;
-    }
+    .price { color: var(--primary-dark); font-size: 1.15rem; font-weight: 850; margin: 10px 0; }
+    .price-details { font-size: .88rem; color: var(--muted); line-height: 1.7; }
 
-    .price-details {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .panel {
-      padding: 22px;
-      margin: 26px 0;
-    }
+    .panel { padding: 22px; margin: 26px 0; }
 
     .form-grid {
       display: grid;
@@ -301,16 +295,8 @@
       overflow-wrap: anywhere;
     }
 
-    .notice.error {
-      background: #fff0ee;
-      color: var(--danger);
-    }
-
-    .notice.success {
-      background: #eaf8ef;
-      color: var(--success);
-    }
-
+    .notice.error { background: #fff0ee; color: var(--danger); }
+    .notice.success { background: #eaf8ef; color: var(--success); }
     .hidden { display: none !important; }
 
     .photo-preview {
@@ -320,12 +306,7 @@
       margin-top: 12px;
     }
 
-    .preview-item {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 7px;
-      min-width: 0;
-    }
+    .preview-item { border: 1px solid var(--border); border-radius: 10px; padding: 7px; min-width: 0; }
 
     .preview-item img {
       width: 100%;
@@ -335,17 +316,8 @@
       display: block;
     }
 
-    .preview-item p {
-      font-size: .76rem;
-      overflow-wrap: anywhere;
-      margin: 6px 0;
-    }
-
-    .preview-item button {
-      width: 100%;
-      font-size: .8rem;
-      padding: 7px;
-    }
+    .preview-item p { font-size: .76rem; overflow-wrap: anywhere; margin: 6px 0; }
+    .preview-item button { width: 100%; font-size: .8rem; padding: 7px; }
 
     .badge {
       display: inline-block;
@@ -357,22 +329,10 @@
       color: #7c5100;
     }
 
-    .badge.published {
-      background: #e5f7eb;
-      color: #17663b;
-    }
+    .badge.published { background: #e5f7eb; color: #17663b; }
+    .badge.rejected { background: #fff0ee; color: #a42c22; }
 
-    .badge.rejected {
-      background: #fff0ee;
-      color: #a42c22;
-    }
-
-    .item-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
+    .item-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 
     .empty {
       padding: 30px 18px;
@@ -383,12 +343,7 @@
       color: var(--muted);
     }
 
-    footer {
-      background: #103b40;
-      color: white;
-      padding: 28px 0;
-    }
-
+    footer { background: #103b40; color: white; padding: 28px 0; }
     footer p { margin: 5px 0; }
 
     .modal {
@@ -412,7 +367,6 @@
     }
 
     .modal-box h2 { margin-bottom: 15px; }
-
     .modal-box .field { margin: 12px 0; }
 
     .modal-top {
@@ -423,6 +377,56 @@
     }
 
     .small { font-size: .88rem; }
+
+    /* VISOR PARA AMPLIAR LAS FOTOGRAFÍAS */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, .92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 55px 16px 65px;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      border: 0;
+      color: white;
+      background: rgba(255, 255, 255, .16);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .lightbox-close { top: 12px; right: 12px; }
+    .lightbox-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 12px; top: 50%; transform: translateY(-50%); }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 18px;
+      color: white;
+      font-size: .9rem;
+      background: rgba(0, 0, 0, .45);
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
 
     @media (max-width: 800px) {
       .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -441,6 +445,10 @@
       .search-panel, .form-grid { grid-template-columns: 1fr; }
       .photo-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .panel { padding: 16px; }
+      .gallery-main .card-photo { height: 235px; }
+      .gallery-thumb { width: 72px; height: 58px; }
+      .lightbox-prev { left: 6px; }
+      .lightbox-next { right: 6px; }
     }
   </style>
 </head>
@@ -451,15 +459,9 @@
     <a class="brand" href="#inicio">Rentas El Cuyo</a>
 
     <div class="nav-actions">
-      <button class="btn btn-light" id="loginButton" type="button">
-        Iniciar sesión
-      </button>
-      <button class="btn btn-primary" id="publishButton" type="button">
-        Publica tu alojamiento
-      </button>
-      <button class="btn btn-outline hidden" id="logoutButton" type="button">
-        Cerrar sesión
-      </button>
+      <button class="btn btn-light" id="loginButton" type="button">Iniciar sesión</button>
+      <button class="btn btn-primary" id="publishButton" type="button">Publica tu alojamiento</button>
+      <button class="btn btn-outline hidden" id="logoutButton" type="button">Cerrar sesión</button>
     </div>
   </div>
 </header>
@@ -467,16 +469,12 @@
 <section class="hero" id="inicio">
   <div class="container">
     <h1>Tu estancia junto al mar</h1>
-    <p>
-      Descubre dónde hospedarte en El Cuyo, Yucatán.
-      Encuentra opciones locales para tu próxima visita.
-    </p>
+    <p>Descubre dónde hospedarte en El Cuyo, Yucatán. Encuentra opciones locales para tu próxima visita.</p>
 
     <div class="search-panel">
       <div class="field">
         <label for="searchText">¿Qué alojamiento buscas?</label>
-        <input id="searchText" type="search"
-               placeholder="Nombre, ubicación o descripción">
+        <input id="searchText" type="search" placeholder="Nombre, ubicación o descripción">
       </div>
 
       <div class="field">
@@ -503,9 +501,7 @@
         </select>
       </div>
 
-      <button class="btn btn-primary" id="searchButton" type="button">
-        Buscar
-      </button>
+      <button class="btn btn-primary" id="searchButton" type="button">Buscar</button>
     </div>
   </div>
 </section>
@@ -517,9 +513,7 @@
         <h2>Alojamientos disponibles</h2>
         <p class="muted">Descubre opciones publicadas por anfitriones locales.</p>
       </div>
-      <button class="btn btn-outline" id="refreshButton" type="button">
-        Actualizar
-      </button>
+      <button class="btn btn-outline" id="refreshButton" type="button">Actualizar</button>
     </div>
 
     <div id="catalogMessage" class="notice hidden" role="status"></div>
@@ -528,31 +522,24 @@
 
   <section id="ownerSection" class="panel hidden">
     <h2>Publica tu alojamiento</h2>
-    <p class="muted">
-      Completa los datos y envía tu alojamiento para revisión.
-      No aparecerá públicamente hasta que sea aprobado.
-    </p>
-
+    <p class="muted">Completa los datos y envía tu alojamiento para revisión. No aparecerá públicamente hasta que sea aprobado.</p>
     <div id="ownerMessage" class="notice hidden" role="status"></div>
 
     <form id="propertyForm">
       <div class="form-grid">
         <div class="field full">
           <label for="pTitle">Nombre del alojamiento *</label>
-          <input id="pTitle" required maxlength="120"
-                 placeholder="Ej. Penthouse de Casa Laura">
+          <input id="pTitle" required maxlength="120" placeholder="Ej. Penthouse de Casa Laura">
         </div>
 
         <div class="field full">
           <label for="pDescription">Descripción *</label>
-          <textarea id="pDescription" required maxlength="3000"
-                    placeholder="Describe tu alojamiento de forma clara y honesta."></textarea>
+          <textarea id="pDescription" required maxlength="3000" placeholder="Describe tu alojamiento de forma clara y honesta."></textarea>
         </div>
 
         <div class="field">
           <label for="pLocation">Ubicación *</label>
-          <input id="pLocation" required maxlength="180"
-                 value="El Cuyo, Yucatán, México">
+          <input id="pLocation" required maxlength="180" value="El Cuyo, Yucatán, México">
         </div>
 
         <div class="field">
@@ -570,8 +557,7 @@
 
         <div class="field">
           <label for="pGuests">Máximo de huéspedes *</label>
-          <input id="pGuests" type="number" required min="1" max="100"
-                 value="2">
+          <input id="pGuests" type="number" required min="1" max="100" value="2">
         </div>
 
         <div class="field">
@@ -591,36 +577,26 @@
 
         <div class="field">
           <label for="pWeekly">Precio por semana (MXN)</label>
-          <input id="pWeekly" type="number" min="0" step="0.01"
-                 placeholder="Opcional">
+          <input id="pWeekly" type="number" min="0" step="0.01" placeholder="Opcional">
         </div>
 
         <div class="field">
           <label for="pMonthly">Precio por mes (MXN)</label>
-          <input id="pMonthly" type="number" min="0" step="0.01"
-                 placeholder="Opcional">
+          <input id="pMonthly" type="number" min="0" step="0.01" placeholder="Opcional">
         </div>
 
         <div class="field full">
           <label for="pPhotos">Fotos del alojamiento (máximo 20)</label>
-          <input id="pPhotos" type="file"
-                 accept="image/jpeg,image/png,image/webp" multiple>
-          <small class="muted">
-            Selecciona fotos de la galería de tu teléfono.
-            Formatos JPG, PNG o WEBP. Máximo 5 MB por imagen.
-          </small>
+          <input id="pPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+          <small class="muted">Selecciona fotos de la galería de tu teléfono. Formatos JPG, PNG o WEBP. Máximo 5 MB por imagen.</small>
           <div id="photoPreview" class="photo-preview"></div>
           <p id="photoMessage" class="small muted" role="status"></p>
         </div>
       </div>
 
       <div class="form-actions">
-        <button class="btn btn-primary" id="submitProperty" type="submit">
-          Enviar para revisión
-        </button>
-        <button class="btn btn-outline" id="cancelProperty" type="button">
-          Cancelar
-        </button>
+        <button class="btn btn-primary" id="submitProperty" type="submit">Enviar para revisión</button>
+        <button class="btn btn-outline" id="cancelProperty" type="button">Cancelar</button>
       </div>
     </form>
   </section>
@@ -639,13 +615,9 @@
     <div class="section-heading">
       <div>
         <h2>Administración</h2>
-        <p class="muted">
-          Revisa los alojamientos enviados antes de publicarlos.
-        </p>
+        <p class="muted">Revisa los alojamientos enviados antes de publicarlos.</p>
       </div>
-      <button class="btn btn-outline" id="adminRefresh" type="button">
-        Actualizar solicitudes
-      </button>
+      <button class="btn btn-outline" id="adminRefresh" type="button">Actualizar solicitudes</button>
     </div>
     <div id="adminMessage" class="notice hidden" role="status"></div>
     <div id="adminProperties" class="grid"></div>
@@ -656,56 +628,48 @@
   <div class="container">
     <p><strong>Rentas El Cuyo</strong></p>
     <p>Una plataforma para descubrir alojamientos locales en El Cuyo, Yucatán.</p>
-    <p class="small">
-      Los precios, las condiciones y la disponibilidad deben confirmarse
-      con el anfitrión antes de concretar una estancia.
-    </p>
+    <p class="small">Los precios, las condiciones y la disponibilidad deben confirmarse con el anfitrión antes de concretar una estancia.</p>
   </div>
 </footer>
 
-<div id="authModal" class="modal hidden" role="dialog"
-     aria-modal="true" aria-labelledby="authTitle">
+<div id="authModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="authTitle">
   <div class="modal-box">
     <div class="modal-top">
       <h2 id="authTitle">Iniciar sesión</h2>
-      <button class="btn btn-outline" id="closeAuth" type="button"
-              aria-label="Cerrar">✕</button>
+      <button class="btn btn-outline" id="closeAuth" type="button" aria-label="Cerrar">✕</button>
     </div>
 
-    <p class="muted small">
-      Accede a tu cuenta o crea una para publicar alojamientos.
-    </p>
-
+    <p class="muted small">Accede a tu cuenta o crea una para publicar alojamientos.</p>
     <div id="authMessage" class="notice hidden" role="status"></div>
 
     <form id="authForm">
       <div class="field">
         <label for="authEmail">Correo electrónico</label>
-        <input id="authEmail" type="email" autocomplete="email"
-               required maxlength="254">
+        <input id="authEmail" type="email" autocomplete="email" required maxlength="254">
       </div>
 
       <div class="field">
         <label for="authPassword">Contraseña</label>
-        <input id="authPassword" type="password"
-               autocomplete="current-password"
-               required minlength="6">
+        <input id="authPassword" type="password" autocomplete="current-password" required minlength="6">
       </div>
 
-      <button class="btn btn-primary" id="authSubmit" type="submit" style="width:100%">
-        Iniciar sesión
-      </button>
+      <button class="btn btn-primary" id="authSubmit" type="submit" style="width:100%">Iniciar sesión</button>
     </form>
 
     <div class="form-actions">
-      <button class="btn btn-outline" id="toggleAuthMode" type="button">
-        Crear cuenta
-      </button>
-      <button class="btn btn-light" id="resetPassword" type="button">
-        Recuperar contraseña
-      </button>
+      <button class="btn btn-outline" id="toggleAuthMode" type="button">Crear cuenta</button>
+      <button class="btn btn-light" id="resetPassword" type="button">Recuperar contraseña</button>
     </div>
   </div>
+</div>
+
+<!-- VISOR DE FOTOGRAFÍAS -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Visor de fotografías">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar fotografía">×</button>
+  <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Fotografía anterior">‹</button>
+  <img id="lightboxImage" src="" alt="">
+  <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Fotografía siguiente">›</button>
+  <div id="lightboxCounter" class="lightbox-counter"></div>
 </div>
 
 <script>
@@ -715,11 +679,7 @@
   const SUPABASE_URL = "https://eeagrqnpdinnipetiysz.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_xCCqnS7S0GdmnlYqt0whFQ_Ts-Hu5ZH";
 
-  const db = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-  );
-
+  const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   const $ = id => document.getElementById(id);
 
   let currentUser = null;
@@ -727,6 +687,10 @@
   let selectedPhotos = [];
   let isAdmin = false;
   let busy = false;
+
+  let lightboxPhotos = [];
+  let lightboxIndex = 0;
+  let lastFocusedElement = null;
 
   const money = value => {
     if (value === null || value === undefined || value === "") return "";
@@ -741,9 +705,7 @@
 
   function localized(value) {
     if (value === null || value === undefined) return "";
-    if (typeof value === "object") {
-      return String(value.es ?? value.en ?? "");
-    }
+    if (typeof value === "object") return String(value.es ?? value.en ?? "");
     return String(value);
   }
 
@@ -773,7 +735,7 @@
     if (typeof value === "string" && value.trim()) {
       try {
         const parsed = JSON.parse(value);
-        return Array.isArray(parsed) ? parsed : [];
+        return Array.isArray(parsed) ? parsed.filter(v => typeof v === "string") : [];
       } catch (_) {
         return [];
       }
@@ -783,17 +745,13 @@
 
   function getStatus(property) {
     if (property.is_published === true) return "Publicado";
-    if (String(property.status || "").toLowerCase() === "rejected") {
-      return "Rechazado";
-    }
+    if (String(property.status || "").toLowerCase() === "rejected") return "Rechazado";
     return "Pendiente de revisión";
   }
 
   function statusBadge(property) {
     const status = getStatus(property);
-    const css = status === "Publicado"
-      ? "published"
-      : status === "Rechazado" ? "rejected" : "";
+    const css = status === "Publicado" ? "published" : status === "Rechazado" ? "rejected" : "";
     return `<span class="badge ${css}">${escapeText(status)}</span>`;
   }
 
@@ -804,11 +762,40 @@
     const type = localized(property.property_type);
     const guests = Number(property.max_guests || 0);
     const photos = getPhotos(property.photos);
-    const photo = photos[0];
+    const galleryId = `gallery-${String(property.id ?? Math.random().toString(36).slice(2))}`;
 
-    const photoHTML = photo
-      ? `<img class="card-photo" src="${escapeText(photo)}"
-              alt="${escapeText(title)}" loading="lazy">`
+    const photoHTML = photos.length
+      ? `
+        <div class="photo-gallery" data-gallery-id="${escapeText(galleryId)}">
+          <div class="gallery-main">
+            <img class="card-photo"
+                 src="${escapeText(photos[0])}"
+                 alt="${escapeText(title)} - foto 1 de ${photos.length}"
+                 loading="lazy"
+                 data-gallery-main="true"
+                 data-gallery-index="0"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Ampliar fotografía 1 de ${photos.length}">
+          </div>
+          ${photos.length > 1 ? `
+            <div class="gallery-thumbnails" aria-label="Miniaturas de fotografías">
+              ${photos.map((url, index) => `
+                <img class="gallery-thumb ${index === 0 ? "active" : ""}"
+                     src="${escapeText(url)}"
+                     alt="${escapeText(title)} - foto ${index + 1}"
+                     loading="lazy"
+                     tabindex="0"
+                     role="button"
+                     data-gallery-thumb="true"
+                     data-gallery-index="${index}"
+                     aria-label="Mostrar fotografía ${index + 1}">
+              `).join("")}
+            </div>
+            <p class="gallery-count">${photos.length} fotografías · Toca una miniatura para verla</p>
+          ` : `<p class="gallery-count">1 fotografía · Toca la imagen para ampliarla</p>`}
+        </div>
+      `
       : `<div class="photo-placeholder" aria-label="Sin fotografías">⌂</div>`;
 
     const nightly = money(property.nightly_price);
@@ -826,10 +813,8 @@
       ? `<div class="item-actions">
           ${statusBadge(property)}
           ${property.is_published
-            ? `<button class="btn btn-outline" data-action="unpublish"
-                       data-id="${escapeText(property.id)}">Retirar publicación</button>`
-            : `<button class="btn btn-primary" data-action="approve"
-                       data-id="${escapeText(property.id)}">Aprobar y publicar</button>`
+            ? `<button class="btn btn-outline" data-action="unpublish" data-id="${escapeText(property.id)}">Retirar publicación</button>`
+            : `<button class="btn btn-primary" data-action="approve" data-id="${escapeText(property.id)}">Aprobar y publicar</button>`
           }
         </div>`
       : "";
@@ -855,6 +840,141 @@
     `;
   }
 
+  /* CAMBIAR LA FOTO PRINCIPAL AL TOCAR UNA MINIATURA */
+  function selectGalleryPhoto(gallery, index) {
+    const main = gallery.querySelector("[data-gallery-main]");
+    const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
+    const selected = thumbs.find(thumb => Number(thumb.dataset.galleryIndex) === index);
+
+    if (!main) return;
+
+    let url;
+    let alt;
+
+    if (selected) {
+      url = selected.src;
+      alt = selected.alt;
+    } else if (index === 0) {
+      const first = gallery.querySelector("[data-gallery-thumb]");
+      if (first) {
+        url = first.src;
+        alt = first.alt;
+      } else {
+        url = main.src;
+        alt = main.alt;
+      }
+    }
+
+    if (!url) return;
+
+    main.src = url;
+    main.alt = alt || "Fotografía del alojamiento";
+    main.dataset.galleryIndex = String(index);
+    main.setAttribute("aria-label", `Ampliar fotografía ${index + 1} de ${thumbs.length || 1}`);
+
+    thumbs.forEach(thumb => {
+      const active = Number(thumb.dataset.galleryIndex) === index;
+      thumb.classList.toggle("active", active);
+      thumb.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  /* ABRIR EL VISOR A PANTALLA COMPLETA */
+  function openLightbox(gallery, index) {
+    const main = gallery.querySelector("[data-gallery-main]");
+    const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
+    const images = thumbs.length
+      ? thumbs.map(thumb => ({ src: thumb.src, alt: thumb.alt }))
+      : main ? [{ src: main.src, alt: main.alt }] : [];
+
+    if (!images.length) return;
+
+    lightboxPhotos = images;
+    lightboxIndex = Math.max(0, Math.min(index, images.length - 1));
+    lastFocusedElement = document.activeElement;
+
+    updateLightbox();
+    $("lightbox").classList.remove("hidden");
+    $("lightboxClose").focus();
+    document.body.style.overflow = "hidden";
+  }
+
+  function updateLightbox() {
+    if (!lightboxPhotos.length) return;
+
+    const item = lightboxPhotos[lightboxIndex];
+    $("lightboxImage").src = item.src;
+    $("lightboxImage").alt = item.alt || "Fotografía del alojamiento";
+    $("lightboxCounter").textContent = `${lightboxIndex + 1} / ${lightboxPhotos.length}`;
+
+    const multiple = lightboxPhotos.length > 1;
+    $("lightboxPrev").classList.toggle("hidden", !multiple);
+    $("lightboxNext").classList.toggle("hidden", !multiple);
+  }
+
+  function moveLightbox(direction) {
+    if (lightboxPhotos.length < 2) return;
+    lightboxIndex = (lightboxIndex + direction + lightboxPhotos.length) % lightboxPhotos.length;
+    updateLightbox();
+  }
+
+  function closeLightbox() {
+    $("lightbox").classList.add("hidden");
+    $("lightboxImage").src = "";
+    document.body.style.overflow = "";
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
+    }
+  }
+
+  /* CLIC Y TECLADO EN LAS GALERÍAS */
+  document.addEventListener("click", event => {
+    const thumb = event.target.closest("[data-gallery-thumb]");
+    if (thumb) {
+      const gallery = thumb.closest(".photo-gallery");
+      if (gallery) selectGalleryPhoto(gallery, Number(thumb.dataset.galleryIndex));
+      return;
+    }
+
+    const main = event.target.closest("[data-gallery-main]");
+    if (main) {
+      const gallery = main.closest(".photo-gallery");
+      if (gallery) openLightbox(gallery, Number(main.dataset.galleryIndex || 0));
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    const thumb = event.target.closest?.("[data-gallery-thumb]");
+    const main = event.target.closest?.("[data-gallery-main]");
+
+    if ((thumb || main) && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+
+      if (thumb) {
+        const gallery = thumb.closest(".photo-gallery");
+        if (gallery) selectGalleryPhoto(gallery, Number(thumb.dataset.galleryIndex));
+      } else if (main) {
+        const gallery = main.closest(".photo-gallery");
+        if (gallery) openLightbox(gallery, Number(main.dataset.galleryIndex || 0));
+      }
+      return;
+    }
+
+    if ($("lightbox").classList.contains("hidden")) return;
+
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") moveLightbox(-1);
+    if (event.key === "ArrowRight") moveLightbox(1);
+  });
+
+  $("lightboxClose").addEventListener("click", closeLightbox);
+  $("lightboxPrev").addEventListener("click", () => moveLightbox(-1));
+  $("lightboxNext").addEventListener("click", () => moveLightbox(1));
+
+  $("lightbox").addEventListener("click", event => {
+    if (event.target === $("lightbox")) closeLightbox();
+  });
+
   function getSearchResults(properties) {
     const query = $("searchText").value.trim().toLowerCase();
     const type = $("searchType").value;
@@ -866,14 +986,9 @@
       const location = localized(property.location).toLowerCase();
       const propertyType = localized(property.property_type).toLowerCase();
 
-      const matchesText = !query ||
-        `${title} ${description} ${location}`.includes(query);
-
-      const matchesType = !type ||
-        propertyType === type.toLowerCase();
-
-      const matchesGuests =
-        Number(property.max_guests || 0) >= guests;
+      const matchesText = !query || `${title} ${description} ${location}`.includes(query);
+      const matchesType = !type || propertyType === type.toLowerCase();
+      const matchesGuests = Number(property.max_guests || 0) >= guests;
 
       return matchesText && matchesType && matchesGuests;
     });
@@ -891,11 +1006,7 @@
       .order("created_at", { ascending: false });
 
     if (error) {
-      showMessage(
-        "catalogMessage",
-        "No pudimos cargar los alojamientos. Comprueba la conexión y las políticas de lectura de properties.",
-        "error"
-      );
+      showMessage("catalogMessage", "No pudimos cargar los alojamientos. Comprueba la conexión y las políticas de lectura de properties.", "error");
       console.error("Error cargando catálogo:", error);
       return;
     }
@@ -929,21 +1040,17 @@
       .order("created_at", { ascending: false });
 
     if (error) {
-      target.innerHTML =
-        '<div class="empty">No se pudieron cargar tus alojamientos. Comprueba las políticas de lectura de properties.</div>';
+      target.innerHTML = '<div class="empty">No se pudieron cargar tus alojamientos. Comprueba las políticas de lectura de properties.</div>';
       console.error("Error cargando alojamientos propios:", error);
       return;
     }
 
     if (!data || !data.length) {
-      target.innerHTML =
-        '<div class="empty">Todavía no has enviado ningún alojamiento.</div>';
+      target.innerHTML = '<div class="empty">Todavía no has enviado ningún alojamiento.</div>';
       return;
     }
 
-    target.innerHTML = data.map(property =>
-      renderCard(property, { owner: true })
-    ).join("");
+    target.innerHTML = data.map(property => renderCard(property, { owner: true })).join("");
   }
 
   async function checkAdmin() {
@@ -964,9 +1071,7 @@
 
     $("adminSection").classList.toggle("hidden", !isAdmin);
 
-    if (isAdmin) {
-      await loadAdminProperties();
-    }
+    if (isAdmin) await loadAdminProperties();
   }
 
   async function loadAdminProperties() {
@@ -981,11 +1086,7 @@
       .order("created_at", { ascending: false });
 
     if (error) {
-      showMessage(
-        "adminMessage",
-        "No fue posible cargar las solicitudes. Comprueba las políticas administrativas de la base de datos.",
-        "error"
-      );
+      showMessage("adminMessage", "No fue posible cargar las solicitudes. Comprueba las políticas administrativas de la base de datos.", "error");
       console.error("Error cargando administración:", error);
       return;
     }
@@ -993,14 +1094,11 @@
     hideMessage("adminMessage");
 
     if (!data || !data.length) {
-      target.innerHTML =
-        '<div class="empty">No hay solicitudes de alojamiento todavía.</div>';
+      target.innerHTML = '<div class="empty">No hay solicitudes de alojamiento todavía.</div>';
       return;
     }
 
-    target.innerHTML = data.map(property =>
-      renderCard(property, { admin: true })
-    ).join("");
+    target.innerHTML = data.map(property => renderCard(property, { admin: true })).join("");
   }
 
   async function updatePublication(id, publish) {
@@ -1017,10 +1115,7 @@
 
     if (!confirmed) return;
 
-    const button = document.querySelector(
-      `[data-id="${CSS.escape(String(id))}"]`
-    );
-
+    const button = document.querySelector(`[data-id="${CSS.escape(String(id))}"]`);
     if (button) button.disabled = true;
 
     const { error } = await db
@@ -1029,22 +1124,13 @@
       .eq("id", id);
 
     if (error) {
-      showMessage(
-        "adminMessage",
-        "No se pudo cambiar la publicación. Comprueba las políticas de actualización administrativa de properties.",
-        "error"
-      );
+      showMessage("adminMessage", "No se pudo cambiar la publicación. Comprueba las políticas de actualización administrativa de properties.", "error");
       console.error("Error cambiando publicación:", error);
       if (button) button.disabled = false;
       return;
     }
 
-    showMessage(
-      "adminMessage",
-      publish ? "Alojamiento publicado." : "Alojamiento retirado del catálogo.",
-      "success"
-    );
-
+    showMessage("adminMessage", publish ? "Alojamiento publicado." : "Alojamiento retirado del catálogo.", "success");
     await Promise.all([loadAdminProperties(), loadCatalog(), loadMyProperties()]);
   }
 
@@ -1054,7 +1140,6 @@
 
     $("loginButton").classList.toggle("hidden", !!currentUser);
     $("logoutButton").classList.toggle("hidden", !currentUser);
-
     $("ownerSection").classList.add("hidden");
     $("mySection").classList.toggle("hidden", !currentUser);
 
@@ -1064,22 +1149,15 @@
       return;
     }
 
-    await Promise.all([
-      loadMyProperties(),
-      checkAdmin()
-    ]);
+    await Promise.all([loadMyProperties(), checkAdmin()]);
   }
 
   function openAuth(mode = "login") {
     authMode = mode;
-    $("authTitle").textContent =
-      mode === "signup" ? "Crear cuenta" : "Iniciar sesión";
-    $("authSubmit").textContent =
-      mode === "signup" ? "Crear cuenta" : "Iniciar sesión";
-    $("toggleAuthMode").textContent =
-      mode === "signup" ? "Ya tengo cuenta" : "Crear cuenta";
-    $("authPassword").autocomplete =
-      mode === "signup" ? "new-password" : "current-password";
+    $("authTitle").textContent = mode === "signup" ? "Crear cuenta" : "Iniciar sesión";
+    $("authSubmit").textContent = mode === "signup" ? "Crear cuenta" : "Iniciar sesión";
+    $("toggleAuthMode").textContent = mode === "signup" ? "Ya tengo cuenta" : "Crear cuenta";
+    $("authPassword").autocomplete = mode === "signup" ? "new-password" : "current-password";
     hideMessage("authMessage");
     $("authModal").classList.remove("hidden");
   }
@@ -1091,10 +1169,7 @@
   function showOwnerForm() {
     if (!currentUser) {
       openAuth("login");
-      showMessage(
-        "authMessage",
-        "Inicia sesión o crea una cuenta para publicar tu alojamiento."
-      );
+      showMessage("authMessage", "Inicia sesión o crea una cuenta para publicar tu alojamiento.");
       return;
     }
 
@@ -1103,9 +1178,7 @@
   }
 
   async function uploadPropertyPhotos(userId) {
-    if (selectedPhotos.length > 20) {
-      throw new Error("Selecciona un máximo de 20 fotos.");
-    }
+    if (selectedPhotos.length > 20) throw new Error("Selecciona un máximo de 20 fotos.");
 
     const urls = [];
 
@@ -1132,15 +1205,10 @@
 
       if (uploadError) {
         console.error("Error subiendo fotografía:", uploadError);
-        throw new Error(
-          "No se pudo subir una fotografía. Revisa la política de Storage y vuelve a intentarlo."
-        );
+        throw new Error("No se pudo subir una fotografía. Revisa la política de Storage y vuelve a intentarlo.");
       }
 
-      const { data } = db.storage
-        .from("property-photos")
-        .getPublicUrl(path);
-
+      const { data } = db.storage.from("property-photos").getPublicUrl(path);
       urls.push(data.publicUrl);
     }
 
@@ -1170,8 +1238,7 @@
 
     if (invalid) {
       resetPhotoSelection();
-      $("photoMessage").textContent =
-        "Una foto no cumple los formatos permitidos o supera 5 MB.";
+      $("photoMessage").textContent = "Una foto no cumple los formatos permitidos o supera 5 MB.";
       return;
     }
 
@@ -1197,11 +1264,9 @@
 
       remove.addEventListener("click", () => {
         selectedPhotos.splice(index, 1);
-
         const transfer = new DataTransfer();
         selectedPhotos.forEach(photo => transfer.items.add(photo));
         $("pPhotos").files = transfer.files;
-
         $("pPhotos").dispatchEvent(new Event("change"));
       });
 
@@ -1216,7 +1281,6 @@
 
   $("propertyForm").addEventListener("submit", async event => {
     event.preventDefault();
-
     if (busy) return;
 
     if (!currentUser) {
@@ -1240,8 +1304,7 @@
       return;
     }
 
-    if (!Number.isFinite(guests) || guests < 1 ||
-        !Number.isFinite(price) || price <= 0) {
+    if (!Number.isFinite(guests) || guests < 1 || !Number.isFinite(price) || price <= 0) {
       showMessage("ownerMessage", "Revisa el número de huéspedes y el precio por noche.", "error");
       return;
     }
@@ -1251,13 +1314,13 @@
       return;
     }
 
-    if (weeklyRaw !== "" && Number(weeklyRaw) < 0) {
-      showMessage("ownerMessage", "El precio semanal no puede ser negativo.", "error");
+    if (weeklyRaw !== "" && (!Number.isFinite(Number(weeklyRaw)) || Number(weeklyRaw) < 0)) {
+      showMessage("ownerMessage", "Revisa el precio semanal.", "error");
       return;
     }
 
-    if (monthlyRaw !== "" && Number(monthlyRaw) < 0) {
-      showMessage("ownerMessage", "El precio mensual no puede ser negativo.", "error");
+    if (monthlyRaw !== "" && (!Number.isFinite(Number(monthlyRaw)) || Number(monthlyRaw) < 0)) {
+      showMessage("ownerMessage", "Revisa el precio mensual.", "error");
       return;
     }
 
@@ -1265,21 +1328,17 @@
     $("submitProperty").disabled = true;
     $("submitProperty").textContent = "Enviando...";
 
-    let uploadedURLs = [];
-
     try {
-      const { data: sessionData, error: sessionError } =
-        await db.auth.getSession();
+      const { data: sessionData, error: sessionError } = await db.auth.getSession();
 
       if (sessionError || !sessionData.session?.user) {
         throw new Error("Tu sesión expiró. Inicia sesión nuevamente.");
       }
 
       currentUser = sessionData.session.user;
-
       showMessage("ownerMessage", "Subiendo fotografías...");
 
-      uploadedURLs = await uploadPropertyPhotos(currentUser.id);
+      const uploadedURLs = await uploadPropertyPhotos(currentUser.id);
 
       const payload = {
         title: { es: title },
@@ -1287,8 +1346,8 @@
         location: { es: location },
         property_type: { es: type },
         max_guests: guests,
-        bedrooms: bedrooms,
-        bathrooms: bathrooms,
+        bedrooms,
+        bathrooms,
         nightly_price: price,
         weekly_price: weeklyRaw === "" ? null : Number(weeklyRaw),
         monthly_price: monthlyRaw === "" ? null : Number(monthlyRaw),
@@ -1299,15 +1358,11 @@
 
       showMessage("ownerMessage", "Guardando alojamiento...");
 
-      const { error: insertError } = await db
-        .from("properties")
-        .insert(payload);
+      const { error: insertError } = await db.from("properties").insert(payload);
 
       if (insertError) {
         console.error("Error guardando alojamiento:", insertError);
-        throw new Error(
-          "Las fotos se subieron, pero no se pudo guardar el alojamiento. Comprueba las políticas de INSERT de properties."
-        );
+        throw new Error("Las fotos se subieron, pero no se pudo guardar el alojamiento. Comprueba las políticas de INSERT de properties.");
       }
 
       $("propertyForm").reset();
@@ -1317,20 +1372,11 @@
       $("pBedrooms").value = "0";
       $("pBathrooms").value = "0";
 
-      showMessage(
-        "ownerMessage",
-        "¡Alojamiento enviado! Quedó pendiente de revisión y no aparecerá en el catálogo hasta que sea aprobado.",
-        "success"
-      );
-
+      showMessage("ownerMessage", "¡Alojamiento enviado! Quedó pendiente de revisión y no aparecerá en el catálogo hasta que sea aprobado.", "success");
       await Promise.all([loadMyProperties(), loadCatalog()]);
     } catch (error) {
       console.error(error);
-      showMessage(
-        "ownerMessage",
-        error.message || "Ocurrió un error. Inténtalo nuevamente.",
-        "error"
-      );
+      showMessage("ownerMessage", error.message || "Ocurrió un error. Inténtalo nuevamente.", "error");
     } finally {
       busy = false;
       $("submitProperty").disabled = false;
@@ -1343,49 +1389,30 @@
 
     const email = $("authEmail").value.trim();
     const password = $("authPassword").value;
-
     $("authSubmit").disabled = true;
 
     try {
       if (authMode === "signup") {
-        const { data, error } = await db.auth.signUp({
-          email,
-          password
-        });
-
+        const { data, error } = await db.auth.signUp({ email, password });
         if (error) throw error;
 
         if (!data.session) {
-          showMessage(
-            "authMessage",
-            "Cuenta creada. Revisa tu correo para confirmar el registro y después inicia sesión.",
-            "success"
-          );
+          showMessage("authMessage", "Cuenta creada. Revisa tu correo para confirmar el registro y después inicia sesión.", "success");
           return;
         }
 
         showMessage("authMessage", "Cuenta creada correctamente.", "success");
       } else {
-        const { error } = await db.auth.signInWithPassword({
-          email,
-          password
-        });
-
+        const { error } = await db.auth.signInWithPassword({ email, password });
         if (error) throw error;
       }
 
       closeAuth();
       await refreshUI();
 
-      if (currentUser) {
-        showOwnerForm();
-      }
+      if (currentUser) showOwnerForm();
     } catch (error) {
-      showMessage(
-        "authMessage",
-        error.message || "No fue posible completar el acceso.",
-        "error"
-      );
+      showMessage("authMessage", error.message || "No fue posible completar el acceso.", "error");
     } finally {
       $("authSubmit").disabled = false;
     }
@@ -1399,40 +1426,25 @@
     const email = $("authEmail").value.trim();
 
     if (!email) {
-      showMessage(
-        "authMessage",
-        "Escribe tu correo electrónico para recuperar la contraseña.",
-        "error"
-      );
+      showMessage("authMessage", "Escribe tu correo electrónico para recuperar la contraseña.", "error");
       return;
     }
 
     try {
       const redirectTo = "https://kuyocperez.github.io/rentas-el-cuyo/";
-
-      const { error } = await db.auth.resetPasswordForEmail(email, {
-        redirectTo
-      });
-
+      const { error } = await db.auth.resetPasswordForEmail(email, { redirectTo });
       if (error) throw error;
 
-      showMessage(
-        "authMessage",
-        "Si el correo puede recibir recuperación de contraseña, recibirás las instrucciones. Revisa también el correo no deseado.",
-        "success"
-      );
+      showMessage("authMessage", "Si el correo puede recibir recuperación de contraseña, recibirás las instrucciones. Revisa también el correo no deseado.", "success");
     } catch (error) {
-      showMessage(
-        "authMessage",
-        error.message || "No se pudo solicitar la recuperación.",
-        "error"
-      );
+      showMessage("authMessage", error.message || "No se pudo solicitar la recuperación.", "error");
     }
   });
 
   $("loginButton").addEventListener("click", () => openAuth("login"));
   $("publishButton").addEventListener("click", showOwnerForm);
   $("closeAuth").addEventListener("click", closeAuth);
+
   $("cancelProperty").addEventListener("click", () => {
     $("ownerSection").classList.add("hidden");
   });
