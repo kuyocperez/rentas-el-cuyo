@@ -1103,8 +1103,8 @@
   }
 
   async function uploadPropertyPhotos(userId) {
-    if (selectedPhotos.length > 8) {
-      throw new Error("Selecciona un máximo de 8 fotos.");
+    if (selectedPhotos.length > 20) {
+      throw new Error("Selecciona un máximo de 20 fotos.");
     }
 
     const urls = [];
@@ -1157,9 +1157,9 @@
   $("pPhotos").addEventListener("change", () => {
     const files = Array.from($("pPhotos").files || []);
 
-    if (files.length > 8) {
+    if (files.length > 20) {
       resetPhotoSelection();
-      $("photoMessage").textContent = "Selecciona un máximo de 8 fotos.";
+      $("photoMessage").textContent = "Selecciona un máximo de 20 fotos.";
       return;
     }
 
@@ -1211,7 +1211,7 @@
 
     $("photoMessage").textContent = files.length
       ? `${files.length} foto(s) seleccionada(s).`
-      : "Puedes seleccionar hasta 8 fotos.";
+      : "Puedes seleccionar hasta 20 fotos.";
   });
 
   $("propertyForm").addEventListener("submit", async event => {
@@ -1246,8 +1246,8 @@
       return;
     }
 
-    if (selectedPhotos.length > 8) {
-      showMessage("ownerMessage", "Selecciona un máximo de 8 fotos.", "error");
+    if (selectedPhotos.length > 20) {
+      showMessage("ownerMessage", "Selecciona un máximo de 20 fotos.", "error");
       return;
     }
 
