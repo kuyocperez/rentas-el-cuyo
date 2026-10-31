@@ -62,6 +62,12 @@ h1{color:#f4fbff;font-weight:780;letter-spacing:-.065em}h1 em{background:linear-
 @media(max-width:700px){.hero{padding:42px 0 32px}.hero-art{min-height:270px;border-radius:23px}.hero-grid{gap:22px}.search-panel{background:rgba(9,32,48,.96)}.catalog-grid{gap:14px}.property-card:hover,.value-card:hover,.info-card:hover,.mission-card:hover,.step-card:hover{transform:none}}
 @media(max-width:390px){.header-actions .btn-light{background:rgba(40,205,190,.13)}}
 
+
+/* Fondo marino con movimiento sutil para la vista previa */
+body{position:relative;isolation:isolate;background-color:#061522!important;background-image:none!important}
+body:before{content:'';position:fixed;inset:-4%;z-index:-1;pointer-events:none;background:linear-gradient(rgba(4,18,32,.78),rgba(4,22,38,.78)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=80') center/cover;opacity:.55;animation:seaMotion 36s ease-in-out infinite alternate}
+@keyframes seaMotion{from{transform:scale(1.04) translateX(-.4%)}to{transform:scale(1.12) translateX(.4%)}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none}}
 </style>
 <style>.preview-banner{position:relative;z-index:1000;padding:10px 16px;text-align:center;background:#082c3b;color:#b9fff4;font:700 13px/1.4 system-ui;letter-spacing:.03em}.preview-banner span{color:#fff}</style>
 <style id="coastal-cinematic-upgrade">
