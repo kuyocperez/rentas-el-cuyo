@@ -63,7 +63,51 @@ h1{color:#f4fbff;font-weight:780;letter-spacing:-.065em}h1 em{background:linear-
 @media(max-width:390px){.header-actions .btn-light{background:rgba(40,205,190,.13)}}
 
 </style>
-<style>.preview-banner{position:relative;z-index:1000;padding:10px 16px;text-align:center;background:#082c3b;color:#b9fff4;font:700 13px/1.4 system-ui;letter-spacing:.03em}.preview-banner span{color:#fff}</style></head>
+<style>.preview-banner{position:relative;z-index:1000;padding:10px 16px;text-align:center;background:#082c3b;color:#b9fff4;font:700 13px/1.4 system-ui;letter-spacing:.03em}.preview-banner span{color:#fff}</style>
+<style id="coastal-cinematic-upgrade">
+:root{--ink:#eaf7f8;--muted:#a6c0ca;--teal:#0b2639;--teal2:#39d6c5;--sand:#0b1b2b;--cream:#071522;--line:rgba(132,204,210,.2);--shadow:0 25px 80px rgba(0,0,0,.38)}
+body{background:#061321;color:#eaf7f8}
+.preview-banner{background:#03101c;border-bottom:1px solid rgba(75,225,209,.25);letter-spacing:.04em}
+.site-header{background:rgba(4,18,31,.78);border-color:rgba(121,203,207,.16)}
+.brand-mark{background:linear-gradient(145deg,#1b9d9b,#45e0c7);box-shadow:0 0 28px rgba(57,214,197,.28)}
+.nav a{color:#c2d9df}
+.btn-primary{background:linear-gradient(110deg,#087f8c,#35cbb8);box-shadow:0 9px 28px rgba(20,193,177,.2)}
+.btn-outline{border-color:rgba(103,220,211,.48);color:#bdf8ee;background:rgba(17,75,89,.2)}
+.hero{position:relative;isolation:isolate;min-height:670px;padding:76px 0 64px;background:radial-gradient(ellipse at 15% 20%,rgba(28,174,174,.18),transparent 42%),linear-gradient(115deg,#061522 8%,#0a2a3a 54%,#071522 100%);overflow:hidden}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(3,15,26,.96) 0%,rgba(3,20,31,.83) 42%,rgba(3,20,31,.15) 100%),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=90') center/cover;opacity:.9;animation:coastDrift 24s ease-in-out infinite alternate}
+.hero:after{content:"";position:absolute;z-index:-1;left:-8%;right:-8%;bottom:-100px;height:190px;border-radius:50%;background:radial-gradient(ellipse,rgba(43,211,195,.18),transparent 68%);filter:blur(20px)}
+.hero-grid{grid-template-columns:1.08fr .92fr;gap:34px}
+.hero h1{color:#f4ffff;text-shadow:0 8px 40px rgba(0,0,0,.35)}
+.hero h1 em{color:#58e5d2}
+.hero-copy,.hero-note{color:#c2d9df}
+.hero-art{min-height:480px;border:1px solid rgba(175,239,235,.32);background-image:linear-gradient(180deg,rgba(3,20,32,.02),rgba(3,20,32,.3)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1500&q=90');box-shadow:0 35px 100px rgba(0,0,0,.5),0 0 0 9px rgba(63,222,203,.045);transform:perspective(1100px) rotateY(-5deg);animation:heroFloat 8s ease-in-out infinite}
+.floating-note{background:rgba(5,28,43,.78);border:1px solid rgba(150,232,224,.28);backdrop-filter:blur(16px);color:#c9e7e8}
+.floating-note strong{color:#68e6d5}
+.search-panel,.property-card,.value-card,.info-card,.mission-card,.step-card,.faq-item,.contact-panel,.panel{background:rgba(9,31,46,.88);border-color:rgba(132,204,210,.2);color:#e8f7f8;box-shadow:0 18px 55px rgba(0,0,0,.18)}
+.field label,.card-body h3,.section h2,.section-head h2{color:#edfafa}
+.field input,.field select,.field textarea{background:#071a2a;color:#eaf7f8;border-color:rgba(132,204,210,.25)}
+.section-soft{background:linear-gradient(180deg,#081b2b,#0a2636)}
+.section{position:relative}
+.section-head p,.section-intro,.about-copy p,.value-card p,.info-card p,.mission-card p,.step-card p,.faq-item p,.contact-panel p,.card-description,.card-location{color:#a8c2cb}
+.card-photo{height:245px}
+.card-photo img{filter:saturate(1.08);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s}
+.property-card{transition:transform .45s,box-shadow .45s}
+.property-card:hover{transform:translateY(-9px) perspective(900px) rotateX(1deg);box-shadow:0 28px 65px rgba(0,0,0,.34),0 0 0 1px rgba(66,220,203,.2)}
+.property-card:hover .card-photo img{transform:scale(1.07);filter:saturate(1.2)}
+.pill{background:rgba(47,198,183,.13);color:#8ce9dd}
+.price-chip{background:rgba(241,188,112,.13);color:#f2d3a7}
+.about-visual{background-image:linear-gradient(160deg,rgba(4,24,38,.08),rgba(4,24,38,.38)),url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1300&q=85');box-shadow:0 28px 75px rgba(0,0,0,.32)}
+.about-stamp{background:rgba(5,29,44,.86);color:#bdf8ee;border:1px solid rgba(133,221,214,.22);backdrop-filter:blur(12px)}
+.host-banner{box-shadow:0 28px 80px rgba(0,0,0,.3);border:1px solid rgba(157,239,226,.2)}
+.host-explainer{background:linear-gradient(120deg,#0a2b3c,#0b1b2b);border-color:rgba(132,204,210,.2)}
+.host-explainer p,.host-callout ol{color:#adc6ce}
+.host-callout{background:#0c2638;border-color:rgba(132,204,210,.2)}
+.site-footer{background:#030e19}
+@keyframes coastDrift{from{transform:scale(1)}to{transform:scale(1.07) translateX(-1.2%)}}
+@media(max-width:700px){.hero{min-height:unset;padding:48px 0 38px}.hero:before{background:linear-gradient(180deg,rgba(3,15,26,.78),rgba(3,20,31,.82)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85') center/cover}.hero-art{min-height:285px;transform:none}.hero-grid{grid-template-columns:1fr}.card-photo{height:205px}}
+@media(prefers-reduced-motion:reduce){.hero:before{animation:none}.hero-art{animation:none;transform:none}}
+</style>
+</head>
 <body><div class="preview-banner">VISTA PREVIA DEL REDISEÑO · <span>Solo visual: formularios, acceso y reservas no están activos.</span></div>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="#inicio" aria-label="Rentas El Cuyo, inicio"><span class="brand-mark">R</span><span>Rentas <span style="color:var(--teal2)">El Cuyo</span></span></a>
