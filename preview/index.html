@@ -66,8 +66,10 @@ h1{color:#f4fbff;font-weight:780;letter-spacing:-.065em}h1 em{background:linear-
 /* Fondo marino con movimiento sutil para la vista previa */
 body{position:relative;isolation:isolate;background-color:#061522!important;background-image:none!important}
 body:before{content:'';position:fixed;inset:-4%;z-index:-1;pointer-events:none;background:linear-gradient(rgba(4,18,32,.78),rgba(4,22,38,.78)),url('https://upload.wikimedia.org/wikipedia/commons/d/dd/El_Cuyo%2C_Yucatan%2C_Mexico_Dec_2021_-_La_Playa.jpg') center/cover;opacity:.55;animation:seaMotion 36s ease-in-out infinite alternate}
-@keyframes seaMotion{from{transform:scale(1.04) translateX(-.4%)}to{transform:scale(1.12) translateX(.4%)}}
-@media(prefers-reduced-motion:reduce){body:before{animation:none}}
+@keyframes seaMotion{0%{transform:scale(1.04) translate3d(-.5%,0,0)}50%{transform:scale(1.09) translate3d(.3%,-.35%,0)}100%{transform:scale(1.13) translate3d(.6%,.2%,0)}}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.2;background:repeating-linear-gradient(174deg,transparent 0 34px,rgba(111,226,218,.12) 36px,transparent 39px 74px);background-size:100% 190px;mix-blend-mode:screen;animation:waterLines 17s ease-in-out infinite alternate}
+@keyframes waterLines{from{transform:translate3d(-1.5%,1%,0) scale(1.02);background-position:0 0}to{transform:translate3d(1.5%,-1%,0) scale(1.06);background-position:0 190px}}
+@media(prefers-reduced-motion:reduce){body:before,body:after{animation:none}}
 </style>
 <style>.preview-banner{position:relative;z-index:1000;padding:10px 16px;text-align:center;background:#082c3b;color:#b9fff4;font:700 13px/1.4 system-ui;letter-spacing:.03em}.preview-banner span{color:#fff}</style>
 <style id="coastal-cinematic-upgrade">
@@ -256,12 +258,16 @@ button,a{touch-action:manipulation}
 <section class="mobile-coast-showcase" aria-label="Paisajes de El Cuyo">
  <div class="coast-glow coast-glow-a"></div><div class="coast-glow coast-glow-b"></div>
  <div class="wrap coast-inner">
-  <div class="coast-intro"><span class="eyebrow">EL CUYO · YUCATÁN</span><h2>Un lugar para <em>desconectarte.</em></h2><p>Déjate llevar por el mar, la arena y la tranquilidad de la costa.</p></div>
-  <div class="coast-photo-strip">
-   <figure class="coast-shot coast-shot-main"><img loading="lazy" src="https://tvazteca.brightspotcdn.com/48/f8/973897994075af91b044a8a696a7/asi-puedes-llegar-a-la-playa-de-yucatan-conocida-por-su-aguas-azul-turquesa.jpg" alt="Olas del mar turquesa"><figcaption><strong>El mar te espera</strong><span>Respira la costa</span></figcaption></figure>
-   <figure class="coast-shot coast-shot-side"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/El_Cuyo%2C_Yucatan%2C_Mexico_Dec_2021_-_La_Playa.jpg" alt="Playa de arena clara y agua azul"><figcaption><strong>Días de playa</strong></figcaption></figure>
-   <figure class="coast-shot coast-shot-side"><img loading="lazy" src="https://tvazteca.brightspotcdn.com/48/f8/973897994075af91b044a8a696a7/asi-puedes-llegar-a-la-playa-de-yucatan-conocida-por-su-aguas-azul-turquesa.jpg" alt="Costa tropical con palmeras"><figcaption><strong>Rincones naturales</strong></figcaption></figure>
-   <figure class="coast-shot coast-shot-wide"><img loading="lazy" src="https://yucatan.travel/wp-content/uploads/2020/03/ElCuyo_01.jpg" alt="Casa de vacaciones rodeada de naturaleza"><figcaption><strong>Encuentra tu estancia</strong><span>Explora alojamientos locales</span></figcaption></figure>
+  <div class="coast-intro"><span class="eyebrow">EL CUYO · YUCATÁN</span><h2>Un lugar para <em>desconectarte.</em></h2><p>Atardeceres dorados, calles de arena, el faro y el sonido del Golfo de México. Descubre esos pequeños momentos que hacen especial a este rincón de Yucatán.</p></div>
+  <div class="coast-photo-strip" aria-label="Galería de paisajes de El Cuyo">
+   <figure class="coast-shot coast-shot-main"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/El_Cuyo%2C_Yucatan%2C_Mexico_Dec_2021_-_La_Playa.jpg" alt="Playa de El Cuyo y mar turquesa"><figcaption><strong>El mar te espera</strong><span>Respira la costa</span></figcaption></figure>
+   <figure class="coast-shot coast-shot-side"><img loading="lazy" decoding="async" src="https://yucatan.travel/wp-content/uploads/2020/03/ElCuyo_03.jpg" alt="Faro rojo y blanco de El Cuyo"><figcaption><strong>El faro de El Cuyo</strong></figcaption></figure>
+   <figure class="coast-shot coast-shot-side"><img loading="lazy" decoding="async" src="https://a0.muscache.com/im/pictures/ee4c68bb-d1d8-4cae-98de-7e918f0779ec.jpg?im_w=720" alt="Atardecer dorado sobre la playa de El Cuyo"><figcaption><strong>Atardeceres dorados</strong></figcaption></figure>
+   <figure class="coast-shot coast-shot-wide"><img loading="lazy" decoding="async" src="https://letstraveltomexico.com/wp-content/uploads/2020/11/El-Cuyo_SUNSET_0066.jpg" alt="Olas suaves y luz de atardecer en El Cuyo"><figcaption><strong>Cuando baja el sol</strong><span>El tiempo parece ir más despacio</span></figcaption></figure>
+   <figure class="coast-shot coast-shot-side"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/f2af4b_0912ffcd42ec49c1b0a49a7e5a9e7733~mv2.jpg/v1/fill/w_1000%2Ch_664%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01/f2af4b_0912ffcd42ec49c1b0a49a7e5a9e7733~mv2.jpg" alt="Muelle y agua tranquila al atardecer"><figcaption><strong>Un paseo sin prisa</strong></figcaption></figure>
+   <figure class="coast-shot coast-shot-side"><img loading="lazy" decoding="async" src="https://cloudfront-eu-central-1.images.arcpublishing.com/prisa/FQHHKODRTZBH7COUEEWEBTC7AU.jpeg" alt="Calle de arena y palmeras del pueblo"><figcaption><strong>Calles con encanto</strong></figcaption></figure>
+   <figure class="coast-shot coast-shot-side"><img loading="lazy" decoding="async" src="https://yucatan.travel/wp-content/uploads/2020/03/ElCuyo_01.jpg" alt="Vista panorámica de la costa de El Cuyo"><figcaption><strong>La costa esmeralda</strong></figcaption></figure>
+   <figure class="coast-shot coast-shot-wide"><img loading="lazy" decoding="async" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/228614303.jpg?k=8f1d99f839546cedac696b0f19da5eb7ba31c2df6f16c1fe10415e6d416ab9ea&o=" alt="Cielo naranja y reflejos del atardecer en la playa"><figcaption><strong>Quédate un poco más</strong><span>El Cuyo se disfruta sin mirar el reloj</span></figcaption></figure>
   </div>
   <a class="coast-discover" href="#alojamientos">Encuentra dónde quedarte <span>↓</span></a>
  </div>
