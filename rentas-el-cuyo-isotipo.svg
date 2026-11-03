@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Rentas El Cuyo — atardecer y muelle</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8c27b"/><stop offset="1" stop-color="#f18b63"/></linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#238f91"/><stop offset="1" stop-color="#0d5269"/></linearGradient>
+  <clipPath id="round"><rect x="4" y="4" width="120" height="120" rx="29"/></clipPath>
+</defs>
+<g clip-path="url(#round)">
+  <rect width="128" height="128" fill="#f7ead5"/>
+  <circle cx="64" cy="57" r="47" fill="url(#sky)"/>
+  <path d="M0 73 Q26 68 48 73 T96 73 T144 73 V128 H0Z" fill="url(#sea)"/>
+  <path d="M0 82 Q18 77 36 82 T72 82 T108 82 T144 82" fill="none" stroke="#a8ded0" stroke-width="2.2" opacity=".85"/>
+  <circle cx="64" cy="53" r="17" fill="#fff0bd"/>
+  <path d="M64 72 V103 M64 79 L91 79 M64 87 L91 87 M64 95 L91 95" stroke="#143d4a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M87 76 V109 M96 76 V109 M105 76 V109" stroke="#143d4a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M53 72 H99" stroke="#143d4a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M10 105 Q25 99 40 105 T70 105 T100 105 T130 105" fill="none" stroke="#9bd8cb" stroke-width="2.5" opacity=".85"/>
+  <path d="M4 117 Q22 111 40 117 T76 117 T112 117 T148 117" fill="none" stroke="#9bd8cb" stroke-width="2" opacity=".65"/>
+</g>
+<rect x="4.8" y="4.8" width="118.4" height="118.4" rx="28.2" fill="none" stroke="#fff7e9" stroke-width="2"/>
+</svg>
