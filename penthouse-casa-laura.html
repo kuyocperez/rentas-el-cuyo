@@ -40,7 +40,7 @@ const local=v=>v&&typeof v==='object'&&!Array.isArray(v)?(v.es??v.en??Object.val
 const money=v=>v===null||v===undefined||v===''?'':new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(Number(v));
 const phone=v=>{let n=String(v??'').replace(/\D/g,'');if(n.length===10)n='52'+n;return n.length>=11&&n.length<=15?n:''};
 function metadata(row,title,description,photo){
- const url=location.origin+location.pathname+'?id='+encodeURIComponent(id);
+ const url=location.pathname.endsWith('penthouse-casa-laura.html')?location.origin+location.pathname:location.origin+location.pathname+'?id='+encodeURIComponent(id);
  document.title=title+' | Rentas El Cuyo';
  document.querySelector('meta[name="description"]').content=description.slice(0,300);
  document.querySelector('link[rel="canonical"]').href=url;
