@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#28d5c2"/>
-      <stop offset="1" stop-color="#087f8c"/>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe5a3"/>
+      <stop offset=".5" stop-color="#d6a64f"/>
+      <stop offset="1" stop-color="#a9782c"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#24d6cf"/>
+      <stop offset="1" stop-color="#0c8195"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="#09283a"/>
-  <path d="M9 34 27 19l18 15v17H9Z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/>
-  <path d="M22 51V38h10v13" fill="none" stroke="#e9bd79" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M43 33V14" stroke="#e9bd79" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M43 15c-7-7-13-5-15-2 6 0 9 3 12 6M43 15c1-8 7-11 11-10-3 4-5 8-8 12M43 15c6-4 12-2 14 2-5-1-9 0-12 2M43 15c-1-5 1-10 4-12" fill="none" stroke="#27d4c1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7 56c6-4 10 4 16 0s10 4 16 0 10 4 18 0" fill="none" stroke="url(#sea)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M12 61c5-3 8 2 13 0s8 2 13 0 8 2 13 0" fill="none" stroke="#e9bd79" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="#071b2d"/>
+  <circle cx="32" cy="31" r="25" fill="none" stroke="url(#gold)" stroke-width="1.7"/>
+  <path d="M15 30 32 16l17 14" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 29v17h24V29" fill="#102f43" stroke="#f7f1e5" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M29 46V35h7v11" fill="none" stroke="#e7bc72" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M13 50c6-4 10 4 17 0s11 4 21 0" fill="none" stroke="url(#sea)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M18 55c5-2 8 2 13 0s8 2 15 0" fill="none" stroke="#e7bc72" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
