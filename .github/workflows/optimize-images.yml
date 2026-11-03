@@ -25,7 +25,7 @@ jobs:
           cat > /tmp/optimize-images.cjs <<'EOF'
           const fs = require('fs');
           const path = require('path');
-          const sharp = require('sharp');
+          const sharp = require(path.join(process.cwd(), 'node_modules', 'sharp'));
           const root = process.cwd();
           const sourceFiles = [];
           function walk(dir) {
