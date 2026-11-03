@@ -1,0 +1,83 @@
+name: Optimize website photos
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install image processor
+        run: npm install --no-save sharp
+      - name: Create WebP versions and update references
+        run: |
+          cat > /tmp/optimize-images.cjs <<'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const sharp = require('sharp');
+          const root = process.cwd();
+          const sourceFiles = [];
+          function walk(dir) {
+            for (const ent of fs.readdirSync(dir, {withFileTypes:true})) {
+              if (ent.name === '.git' || ent.name === 'node_modules') continue;
+              const p = path.join(dir, ent.name);
+              if (ent.isDirectory()) walk(p);
+              else if (/\.(html?|css|js)$/i.test(ent.name)) sourceFiles.push(p);
+            }
+          }
+          walk(root);
+          const textFiles = sourceFiles.map(p => ({p, text:fs.readFileSync(p,'utf8')}));
+          const refs = new Set();
+          for (const {text} of textFiles) {
+            for (const m of text.matchAll(/(?:src|data-src|poster)\s*=\s*["']([^"'?#]+\.(?:jpe?g|png))["']/gi)) refs.add(m[1]);
+            for (const m of text.matchAll(/url\(\s*["']?([^"'()?#]+\.(?:jpe?g|png))["']?\s*\)/gi)) refs.add(m[1]);
+          }
+          (async () => {
+            let converted = 0, savedBefore = 0, savedAfter = 0;
+            for (const ref of refs) {
+              let decoded;
+              try { decoded = decodeURIComponent(ref); } catch { decoded = ref; }
+              const clean = decoded.replace(/^\.\//,'');
+              const input = path.resolve(root, clean);
+              if (!input.startsWith(root + path.sep) || !fs.existsSync(input)) continue;
+              const output = input.replace(/\.(jpe?g|png)$/i,'.webp');
+              if (fs.existsSync(output)) continue;
+              const before = fs.statSync(input).size;
+              await sharp(input).rotate().resize({width:2000,height:2000,fit:'inside',withoutEnlargement:true}).webp({quality:78,effort:5}).toFile(output);
+              const after = fs.statSync(output).size;
+              savedBefore += before; savedAfter += after; converted++;
+              const rel = path.relative(root,input).split(path.sep).join('/');
+              const webp = rel.replace(/\.(jpe?g|png)$/i,'.webp');
+              for (const f of textFiles) {
+                f.text = f.text.split(rel).join(webp);
+                const encoded = encodeURI(rel).replace(/'/g,'%27');
+                f.text = f.text.split(encoded).join(encodeURI(webp).replace(/'/g,'%27'));
+              }
+            }
+            for (const f of textFiles) fs.writeFileSync(f.p,f.text);
+            console.log(JSON.stringify({referenced:refs.size,converted,originalBytes:savedBefore,webpBytes:savedAfter, originalsPreserved:true},null,2));
+          })().catch(e => { console.error(e); process.exit(1); });
+          EOF
+          node /tmp/optimize-images.cjs
+      - name: Commit optimized versions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+          else
+            git commit -m "Optimize website photos as WebP"
+            git push
+          fi
