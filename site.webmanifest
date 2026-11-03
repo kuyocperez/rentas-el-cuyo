@@ -1,19 +1,19 @@
 {
   "name": "Rentas El Cuyo",
   "short_name": "Rentas El Cuyo",
-  "description": "Descubre alojamientos y conecta directamente con anfitriones locales en El Cuyo, Yucatán.",
+  "description": "Encuentra casas, departamentos y alojamientos vacacionales en El Cuyo, Yucatán. Contacta directamente con sus anfitriones.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#fffefa",
-  "theme_color": "#0b5b62",
+  "theme_color": "#071b2d",
   "lang": "es-MX",
   "icons": [
     {
-      "src": "/favicon.svg?v=3",
+      "src": "/favicon.svg?v=4",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
