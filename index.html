@@ -130,6 +130,110 @@ h1{color:#f4fbff;font-weight:780;letter-spacing:-.065em}h1 em{background:linear-
 .card-description { color: #516969; }
 </style>
 
+<style id="premium-redesign-v2">
+/* Rentas El Cuyo · renovación visual progresiva, sin alterar catálogo ni Supabase */
+:root{--ink:#102d3d;--muted:#607983;--teal:#073b55;--teal2:#0b8790;--sand:#f3f6f2;--cream:#fffefa;--line:#d8e5e4;--coral:#e9a66b;--shadow:0 22px 60px rgba(5,39,55,.14);--radius:26px}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:#fbfcf8;color:var(--ink);letter-spacing:-.008em}
+.site-header{background:rgba(7,27,45,.94);border-bottom:1px solid rgba(126,211,209,.18);box-shadow:0 8px 30px rgba(3,24,37,.12)}
+.site-header .brand{color:#f5fbfa}.site-header .brand span[style]{color:#72d5cf!important}
+.site-header .nav a{color:#d7e9e8}.site-header .nav a:hover{color:#80e1d7}
+.site-header .brand-logo{border-radius:14px;box-shadow:0 5px 18px #001b2b55}
+.site-header .btn-light{background:#e6f4ef;color:#073b55}.site-header .btn-primary{background:#0c9295;color:white}
+.hero{position:relative;padding:clamp(54px,7vw,94px) 0 54px;background:linear-gradient(135deg,#071b2d 0%,#0b3c50 55%,#087b80 100%);isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 12% 18%,rgba(85,207,199,.19),transparent 38%),radial-gradient(ellipse at 88% 88%,rgba(236,177,116,.15),transparent 35%)}
+.hero-grid{grid-template-columns:1fr 1.04fr;gap:clamp(28px,5vw,68px)}
+.hero .eyebrow{color:#8ce0d6}.hero .eyebrow:before{background:#efb77e}
+.hero h1{color:#fff;font-size:clamp(2.8rem,5.5vw,5.25rem);max-width:620px;letter-spacing:-.065em}
+.hero h1 em{color:#8ce0d6}
+.hero-copy{color:#d1e4e5;font-size:clamp(1rem,1.3vw,1.16rem);max-width:540px}
+.hero-note{color:#a9c6ca}
+.hero .btn-primary{background:#f0b77d;color:#18384a;box-shadow:0 9px 25px #001c2b40}
+.hero .btn-primary:hover{background:#ffd09d}
+.hero .btn-outline{color:#f3fbf8;border-color:#8dc8c4;background:#ffffff0a}
+.hero-art{min-height:clamp(300px,38vw,480px);border:1px solid #ffffff35;border-radius:30px;box-shadow:0 30px 85px #00152266;animation:coastFloat 8s ease-in-out infinite;transform:translateZ(0)}
+.hero-art:after{content:"EL CUYO · YUCATÁN · GOLFO DE MÉXICO";letter-spacing:.16em;bottom:20px;left:22px}
+.floating-note{top:20px;left:20px;border:1px solid #ffffffb0;background:#fffefaed;backdrop-filter:blur(12px);border-radius:16px}
+.search-panel{margin-top:30px;padding:17px;border-radius:22px;border:1px solid #ffffff40;background:#fffefa;box-shadow:0 24px 65px #00152240}
+.search-panel .btn{min-height:48px;background:#0a7881}
+.section{padding:clamp(58px,7vw,94px) 0}
+.section-soft{background:linear-gradient(145deg,#f0f6f2,#f8f4eb)}
+.section-head h2,.section h2{color:#12384b;letter-spacing:-.05em}
+.eyebrow{color:#0b8790}
+.property-card,.value-card,.info-card,.mission-card,.step-card,.faq-item{border-radius:22px;box-shadow:0 12px 36px rgba(8,48,59,.07);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.property-card:hover,.value-card:hover,.info-card:hover,.mission-card:hover,.step-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(8,48,59,.12)}
+.card-photo{height:clamp(185px,21vw,245px)}
+.about-visual{border-radius:28px;box-shadow:0 24px 55px rgba(8,48,59,.13)}
+.host-banner{background:linear-gradient(120deg,#082d45,#087c83 72%,#159b96);box-shadow:0 22px 55px rgba(5,48,61,.18)}
+.site-footer{background:#061d30}
+.destination-gallery{background:#fffefa}
+.video-section{background:#eef5f0}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f0b77d;outline-offset:3px}
+@keyframes coastFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media(max-width:700px){
+ .site-header{backdrop-filter:blur(10px)}
+ .site-header .nav{background:#08283b;border-top:1px solid #ffffff20;padding:12px 14px 16px;border-radius:0 0 18px 18px}
+ .site-header .nav a{font-size:.94rem}
+ .hero{padding:30px 0 34px}
+ .hero-grid{grid-template-columns:1fr;gap:24px}
+ .hero-art{order:-1;min-height:250px;border-radius:22px;animation:none}
+ .hero h1{font-size:clamp(2.5rem,11.5vw,3.5rem);margin-top:12px}
+ .hero-copy{font-size:1rem}
+ .search-panel{margin-top:22px;padding:12px;border-radius:18px}
+ .section{padding:54px 0}
+ .card-photo{height:190px}
+}
+</style>
+<style id="destination-experience-v2">
+/* Experiencia editorial del destino: solo presentación, no toca datos ni flujos */
+.destination-gallery{position:relative;overflow:hidden;background:linear-gradient(180deg,#f7faf6 0%,#edf4ef 100%)}
+.destination-gallery:before{content:"";position:absolute;width:420px;height:420px;right:-210px;top:0;border-radius:50%;background:radial-gradient(circle,#8bd4cb2c,transparent 68%);pointer-events:none}
+.destination-gallery .section-head{position:relative;z-index:1;margin-bottom:34px}
+.destination-gallery .section-head h2{font-size:clamp(2.2rem,4.4vw,3.5rem);max-width:650px}
+.destination-gallery .section-head p{font-size:1.04rem;max-width:600px}
+.destination-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(135px,15vw,205px);gap:13px}
+.destination-grid figure{height:auto;min-height:0;border-radius:20px;box-shadow:0 14px 34px rgba(7,43,56,.12);isolation:isolate}
+.destination-grid figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.destination-grid figure:nth-child(2){grid-column:span 1}
+.destination-grid figure:nth-child(3){grid-column:span 1}
+.destination-grid figure:nth-child(4){grid-column:span 2}
+.destination-grid figure:nth-child(5){grid-column:span 1}
+.destination-grid figure:nth-child(6){grid-column:span 1}
+.destination-grid img{filter:saturate(.92);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.destination-grid figure:hover img,.destination-grid figure:focus-within img{transform:scale(1.07);filter:saturate(1.12)}
+.destination-grid figcaption{padding:45px 17px 15px;font-size:.93rem;letter-spacing:.005em;background:linear-gradient(transparent 0%,rgba(4,25,37,.08) 20%,rgba(4,25,37,.78) 100%)}
+.destination-grid figure:nth-child(1) figcaption{font-size:1.08rem;padding:60px 22px 20px}
+.destination-grid figure:after{content:"";position:absolute;inset:0;border:1px solid #ffffff20;border-radius:inherit;pointer-events:none}
+.video-section{position:relative;background:#071f31;color:#f4fbf8;padding:clamp(48px,6vw,76px) 0}
+.video-copy .eyebrow{color:#8ce0d6}
+.video-copy h2{color:#fff;font-size:clamp(2rem,4vw,3.2rem)}
+.video-copy h2 em{color:#8ce0d6}
+.video-copy p{color:#c0d6d8;line-height:1.8}
+.video-frame{border:1px solid #ffffff30;box-shadow:0 28px 70px #00131f88}
+.guide-intro{border:1px solid #dce9e3;border-radius:24px;padding:clamp(22px,4vw,38px);background:linear-gradient(130deg,#fffefa,#edf6f1);box-shadow:0 18px 44px rgba(9,52,61,.07)}
+.guide-intro p{max-width:900px;line-height:1.85;color:#49656b}
+.guide-intro p:last-child{margin-bottom:0}
+.steps-grid{gap:20px}
+.step-card{position:relative;overflow:hidden;padding:28px;background:linear-gradient(145deg,#fff,#f5f8f3)}
+.step-number{background:linear-gradient(135deg,#0a4358,#0b9292);box-shadow:0 8px 18px #0a43582b}
+.faq-item{transition:border-color .2s,box-shadow .2s}
+.faq-item[open]{border-color:#80c9c1;box-shadow:0 10px 28px #0a535312}
+.contact-panel{border-radius:26px;padding:clamp(22px,4vw,38px);background:linear-gradient(115deg,#f3f8f2,#fffefa);box-shadow:0 16px 42px rgba(9,52,61,.07)}
+@media(max-width:850px){
+ .destination-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(145px,27vw,210px);gap:11px}
+ .destination-grid figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+ .destination-grid figure:nth-child(4){grid-column:span 2}
+}
+@media(max-width:520px){
+ .destination-grid{grid-auto-rows:150px;gap:9px}
+ .destination-grid figure{border-radius:15px}
+ .destination-grid figure:nth-child(1){grid-row:span 2}
+ .destination-grid figcaption{font-size:.82rem;padding:34px 11px 11px}
+ .destination-grid figure:nth-child(1) figcaption{font-size:.95rem;padding:42px 13px 13px}
+ .video-layout{gap:16px}
+}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="wrap header-inner">
